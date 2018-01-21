@@ -24,21 +24,31 @@ public class GirlController {
      * @param age   年龄
      * @return
      */
-
-
     @PostMapping("/girl")
-    public Girl insert(@RequestParam("cup") String cupSize,
+    public Girl insert(@RequestParam("cupSize") String cupSize,
                        @RequestParam("age") Integer age){
         Girl girl = new Girl();
         girl.setAge(age);
         girl.setCupSize(cupSize);
         return girlDao.save(girl);
     }
-
+    //删除一个女生
     @DeleteMapping("/girl/{id}")
-    public String delete(@PathVariable("id")Integer id){
+    public void delete(@PathVariable("id")Integer id){
         girlDao.delete(id);
-        return "sucess";
+    }
+    //查询一个女生
+    @GetMapping("/girl/{id}")
+    public Girl findGirl(@PathVariable("id")Integer id){
+        return girlDao.findOne(id);
+    }
+    //更新
+    @PutMapping("/girl/{id}")
+    public Girl girlUpdate(@PathVariable("id")Integer id,
+                           @RequestParam("cupSize") String cupSize,
+                           @RequestParam("age") Integer age){
+        Girl g = new Girl(id,cupSize,age);
+        return girlDao.save(g);
     }
 
 }
