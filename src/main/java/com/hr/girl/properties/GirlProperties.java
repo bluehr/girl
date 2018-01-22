@@ -1,4 +1,4 @@
-package com.hr.girl;
+package com.hr.girl.properties;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
