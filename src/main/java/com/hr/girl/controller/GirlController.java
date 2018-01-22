@@ -35,8 +35,7 @@ public class GirlController {
      * @return
      */
     @PostMapping("/girl")
-    public Result<Girl> insert(@Valid Girl girl,
-                         BindingResult bindingResult){
+    public Result<Girl> insert(@Valid Girl girl,BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return ResultUtil.Error(1,bindingResult.getFieldError().getDefaultMessage());
         }

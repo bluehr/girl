@@ -5,17 +5,13 @@ public enum ResultEnums {
     SUCCESS(0,"成功"),
     PRIMARY_SCHOOL(100,"May Be 小学生"),
     MIDDLE_SCHOOL(101,"May Be 初中学生");
-
     ;
-
     private Integer code;
     private String message;
-
     ResultEnums(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
-
     public Integer getCode() {
         return code;
     }

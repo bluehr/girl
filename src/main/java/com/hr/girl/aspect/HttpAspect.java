@@ -43,6 +43,4 @@ public class HttpAspect {
     public void afterReturning(Object object){
         logger.info("response={}", object.toString());
     }
-
-
 }

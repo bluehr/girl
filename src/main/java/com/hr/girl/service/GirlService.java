@@ -21,6 +21,7 @@ public class GirlService {
         if (girl.getAge()>10 && girl.getAge()<16){
             throw new GirlException(ResultEnums.MIDDLE_SCHOOL);
         }
+        //*其他逻辑情况代码
         return girl;
     }
 
